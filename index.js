@@ -16,10 +16,9 @@ mongoose.connect(config.uri, (err) => {
   }
 });
 
-app.use(express.static(__dirname + '/client/dist/'));
-html
+app.use(express.static(__dirname + '/client/dist/client'));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/dist/index.html'));
+  res.sendFile(path.join(__dirname + '/client/dist/client/index.html'));
 });
 
 
